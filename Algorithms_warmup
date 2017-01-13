@@ -1,0 +1,122 @@
+
+#1.Solve Me First
+def solveMeFirst(a,b):
+    return (a+b)
+
+#2.Simple Array Sum
+n = int(input().strip())
+arr = [int(arr_temp) for arr_temp in input().strip().split(' ')]
+
+print(sum(arr))
+
+#3.Compare the Triplets
+import sys
+
+a0,a1,a2 = input().strip().split(' ')
+a0,a1,a2 = [int(a0),int(a1),int(a2)]
+b0,b1,b2 = input().strip().split(' ')
+b0,b1,b2 = [int(b0),int(b1),int(b2)]
+
+A = [a0,a1,a2]
+
+B = [b0,b1,b2]
+
+aSum = []
+bSum = []
+
+for i in range(len(A)):
+	if A[i] > B[i]:
+		aSum.append(1)
+	elif A[i] == B[i]:
+		aSum.append(0)
+	else:
+		bSum.append(1)
+
+print(sum(aSum),sum(bSum))
+
+
+#4.A Very Big Sum
+print(sum(arr))
+
+#5.Diagonal Difference
+
+import sys
+
+
+n = int(input().strip())
+a = []
+for a_i in range(n):
+    a_t = [int(a_temp) for a_temp in input().strip().split(' ')]
+    a.append(a_t)
+    
+sum1 = 0
+sum2 = 0
+for i in range(len(a)):
+    sum1 += a[i][i]
+    sum2 += a[i][len(a[0])-1-i]
+print (abs(sum1 - sum2))
+
+#6.Plus Minus
+n = int(input().strip())
+arr = [int(arr_temp) for arr_temp in input().strip().split(' ')]
+
+pos = []
+neg = []
+zero = []
+
+
+for i in arr:
+	if i >0:
+		pos.append(i)
+	elif i == 0:
+		zero.append(i)
+	else:
+		neg.append(i)
+
+result_1 = len(pos)/n
+result_2 = len(neg)/n
+result_3 = len(zero)/n
+
+print("%f" % result_1)
+print("%f" % result_2)
+print("%f" % result_3)
+
+#7.Staircase 
+n = int(input().strip())
+
+def staircase(n):
+    for stairs in range(1, n +1):
+        print (' ' * (n - stairs) + '#' * stairs)
+
+(staircase(n))
+
+#8.Time Conversion
+time = input().strip()
+
+hh = time[0:2]
+period = time[-2:]
+
+if period == 'AM':
+    if hh == '12':
+        output = '00' + time[2:-2]
+    else:
+        output = time[0:-2]
+elif period == 'PM':
+    hh = time[0:2]
+    if hh == '12':
+        output = time[0:-2]
+    else:
+        output = str(int(hh) + 12) + time[2:-2]
+else:
+    assert False
+
+print (output)
+
+#9.Circular Array Rotation
+
+
+
+
+
+
+  
