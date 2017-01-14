@@ -1,0 +1,132 @@
+#1. Mini-Max Sum
+a,b,c,d,e = input().strip().split(' ')
+a,b,c,d,e = [int(a),int(b),int(c),int(d),int(e)]
+
+list_sum = [a,b,c,d,e]
+list_sum = sorted(list_sum)
+
+print(sum(list_sum[0:4]), sum(list_sum[1:5]))
+
+
+#2. Designer PDF Viewer
+h = [int(h_temp) for h_temp in input().strip().split(' ')]
+word = input().strip()
+
+
+height = []
+for i in word:
+    height += [h[ord(i) - ord('a')]]
+print (len(word) * max(height))
+
+#3.Apple and Orange
+s,t = input().strip().split(' ')
+s,t = [int(s),int(t)]
+a,b = input().strip().split(' ')
+a,b = [int(a),int(b)]
+m,n = input().strip().split(' ')
+m,n = [int(m),int(n)]
+apple = [int(apple_temp) for apple_temp in input().strip().split(' ')]
+orange = [int(orange_temp) for orange_temp in input().strip().split(' ')]
+
+apple_list = []
+orange_list = []
+
+for i in apple:
+    if a+i >= s and a +i <= t:
+        apple_list.append(i)
+
+for i in orange:
+    if b + i >=s and b+i <= t:
+        orange_list.append(i)
+
+print (len(apple_list))
+print (len(orange_list))
+        
+#4.Kangaroo
+x1,v1,x2,v2 = input().strip().split(' ')
+x1,v1,x2,v2 = [int(x1),int(v1),int(x2),int(v2)]
+
+if (x1 > x2 and v1 >= v2) or (x1 < x2 and v1 <= v2) or abs(x1-x2) % abs(v1-v2) != 0:
+    print ('NO')
+else:
+    print ('YES')
+    
+#5.Between Two Sets
+n,m = input().strip().split(' ')
+n,m = [int(n),int(m)]
+a = [int(a_temp) for a_temp in input().strip().split(' ')]
+b = [int(b_temp) for b_temp in input().strip().split(' ')]
+
+a.sort()
+b.sort()
+ausgabe = 0
+for q in range(b[0] +1):
+    if q >= a[-1]:
+        for t in range(n):
+            if q % a[t] != 0:
+                break
+            if t == n -1:
+                for g in range(m):
+                    if b[g] % q != 0:
+                        break
+                    if g == m -1:
+                        ausgabe += 1
+      
+print(ausgabe)
+
+#6.Divisible Sum Pairs
+n,k = input().strip().split(' ')
+n,k = [int(n),int(k)]
+a = [int(a_temp) for a_temp in input().strip().split(' ')]
+
+
+result_i =[]
+result_j = []
+
+for i in range(n):
+    for j in range(n):
+        if (a[i] + a[j]) % k == 0 and i <j:
+            result_i.append(i)
+            result_j.append(j)
+print (len(result_i))
+
+#7.Bon Appétit
+total_price = sum(c)
+split_in_half = sum(c)/2
+
+total_price_2 = sum(c) - c[k]
+split_in_half_2 = total_price_2/2
+
+if split_in_half_2 == b:
+    print ('Bon Appetit')
+else:
+    print (int(abs(split_in_half-split_in_half_2)))
+
+#8.Sock Merchant
+
+d = {x:c.count(x) for x in c}
+
+value_list = list(d.values())
+
+value_list_2 = []
+
+for i in value_list:
+	if i >1 :
+		value_list_2.append(i)
+
+value_list_3=[]
+
+for i in value_list_2:
+	if i%2==0:
+		value_list_3.append(i)
+	else:
+		value_list_3.append(i-1)
+
+print(int(sum(value_list_3)/2))
+
+#9.Utopian Tree (unresolved)
+
+#10.Angry Professor
+
+
+        
