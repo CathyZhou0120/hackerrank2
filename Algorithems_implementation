@@ -124,9 +124,162 @@ for i in value_list_2:
 
 print(int(sum(value_list_3)/2))
 
-#9.Utopian Tree (unresolved)
+#9.Utopian Tree
+import sys
+
+t = int(input().strip())
+for a0 in range(t):
+    n = int(input().strip())
+    height = 1
+    if n == 0:
+        print(1)
+    elif n % 2 == 0:
+        height = 2 ** ((n/2) + 1) - 1
+        print(int(height))
+    elif n % 2 == 1:
+        height = 2 ** ((n + 3)/2) - 2
+        print(int(height))
 
 #10.Angry Professor
+import sys
+
+
+t = int(input().strip())
+for a0 in range(t):
+    n,k = input().strip().split(' ')
+    n,k = [int(n),int(k)]
+    a = [int(a_temp) for a_temp in input().strip().split(' ')]
+    print('YES' if len([i for i in a if i<=0])<k else 'NO')
+
+#11.Beautiful Days at the Movies
+i, j, k = [int(x) for x in input().split()]
+
+beautiful_day = []
+
+for day in range(i,j+1):
+	day = str(day)
+	day_r = day[::-1]
+	if abs(int(day) - int(day_r))%k ==0:
+		beautiful_day.append(int(i))
+
+print(len(beautiful_day))
+
+#12.Viral Advertising
+import math
+n = int(input())
+origin = 5
+origin_list=[]
+
+for i in range(n):
+    origin = (math.floor(origin/2))
+    origin_list.append(origin)
+    origin = origin *3
+    
+
+print(int(sum(origin_list)))
+
+#13.Save the Prisoner
+T = int(input().strip())
+for _ in range(T):
+    N,M,S = list(map(int, input().strip().split()))
+    print(((S - 1 + M - 1) % N) + 1)
+    
+#14.Jumping on the Clouds: Revisited
+import sys
+
+
+n,k = input().strip().split(' ')
+n,k = [int(n),int(k)]
+c = [int(c_temp) for c_temp in input().strip().split(' ')]
+i = k % n 
+energy = 100
+energy -= c[i] * 2 + 1 
+while i != 0:
+    i = (i + k) % n
+    energy -= c[i] * 2 + 1
+    
+print (energy)
+
+
+#15.Find Digits
+import sys
+
+
+t = int(input().strip())
+for a0 in range(t):
+    n = int(input().strip())
+    n = str(n)
+    n_i = []
+    for i in n:
+        if int(i)!=0:
+            n_i.append(int(i))
+    n_ii =[]
+    for i in n_i:
+        if int(n)%i==0:
+            n_ii.append(i)
+            
+    print(len(n_ii))
+    
+ #16.Extra Long Factorials
+ import sys
+import operator
+import functools
+
+n = int(input().strip())
+n_l = []
+for i in range(1,n+1):
+    n_l.append(i)
+
+print (functools.reduce(lambda x, y: x*y, n_l))
+
+#17.Append and Delete (unresolved)
+
+#18.Sherlock and Squares
+import math
+t = int(input().strip())
+for a0 in range(t):
+    a,b = input().strip().split(' ')
+    a,b = [int(a),int(b)]
+    square_root=[]
+    for i in range(a,b+1):
+        if math.sqrt(i)-int(math.sqrt(i)) ==0:
+            square_root.append(i)
+    print(len(square_root))
+
+#19.Library Fine
+import sys
+from datetime import datetime
+
+d1,m1,y1 = input().strip().split(' ')
+d1,m1,y1 = [int(d1),int(m1),int(y1)]
+d2,m2,y2 = input().strip().split(' ')
+d2,m2,y2 = [int(d2),int(m2),int(y2)]
+
+date_actual  = datetime(year=y1, month=m1, day=d1)
+date_expected  = datetime(year=y2, month=m2, day=d2)
+
+if date_expected >= date_actual:
+    print(0)
+elif date_expected < date_actual and  (date_actual - date_expected).days<= 30 and y1==y2:
+    print(15*(d1-d2))
+elif date_expected < date_actual and (date_actual - date_expected).days > 30 and y1 == y2:
+    print(500*(m1-m2))
+elif date_expected < date_actual and  y1!=y2:
+    print(10000)
+
+
+#20.Cut the sticks
+import sys
+
+n = int(input().strip())
+arr = [int(arr_temp) for arr_temp in input().strip().split(' ')]
+
+while(len(arr)):
+    print(len(arr))
+    arr = [x - min(arr) for x in arr if x - min(arr)>0]
+
+#21.
+
 
 
         
