@@ -118,7 +118,40 @@ for _ in range(n):
     else:
         print ("Funny")
     
- #8. 
+ #8.Gemstones 
+ #9.Alternating Characters
+ #10.Beautiful Binary String
+ #11.The Love Letter Mystery
+ #12.Palindrome Index
+ #13.Anagram
+ #14.Making Anagrams
+ #15.Game of Thrones -I
+ #16.Two Strings
+ #17.String Construction
+ #18.Sherlock and Valid String
+ #19.Richie Rich
+ #20.Sherlock and Anagrams
+ #21.Common Child
+ #22.Bear and Steady Gene
+ #23.Morgan and a String
+ #24.Count Strings
+ #25.String Fuction Calculation
+ #26.Build a Palindrome
+ #27.Build a String
+ #28.Gridland Provinces
+ #29.Ashton and String
+ #30.String Similarity
+ #31.Super Functional String
+ #32.Circular Palindromes
+ #33.Similar Strings
+ #34.Save Humanity
+ #35.Find Strings
+ #36.Palindromic Border
+ #37.Two Two
+ #38.Two Strings Game
+ #39.Letter Islands
+ #40.Pseudo-Isomorphic Substrings
+ 
 
 
 
