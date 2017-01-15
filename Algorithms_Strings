@@ -1,2 +1,118 @@
 
 #1.Super Reduced String
+import re
+from collections import Counter
+
+
+s, regex = input().strip(), re.compile(r'(\w)(\1)')
+match = regex.search(s)
+while match:    
+    s = s.replace(match.group(),'')        
+    match = regex.search(s)
+print (s if s else 'Empty String')
+
+#2.CamelCase
+import sys
+print(sum(map(str.isupper, input())) + 1)
+
+#3.Two Characters
+import sys
+import re
+from itertools import combinations
+
+s_len = int(input().strip())
+s = input().strip()
+def isValid(s, a, b):
+  regex1 = a + a
+  regex2 = b + b
+  regex3 = r"[^" + a + b + r"]+"
+  if (re.search(regex1, s) or re.search(regex2, s) or re.search(regex3, s)):
+    return False
+  else:
+    return True
+
+max = 0
+for p in combinations(set(s), 2):
+  s2 = "".join(x for x in s if x in p)
+  if isValid(s2, p[0], p[1]):
+    if len(s2) > max:
+      max = len(s2)
+print(max)
+
+#4.Pangrams
+sentence = input().strip()
+sentence = list(sentence)
+sentence = list(set(sentence))
+sentence = map(lambda x:x.lower(),sentence)
+sentence = list(filter(lambda letter: letter.strip(), sentence))
+sentence = list(set(sentence))
+
+
+if len(sentence) != 26:
+	print ('not pangram')
+else:
+	print ('pangram')
+
+#5.Caesar Cipher
+import string
+
+n = int(input().strip())
+s = input().strip()
+k = int(input().strip())
+
+al_list = list(string.ascii_lowercase)
+new_list = []
+
+
+for i in s:
+	if re.match("[A-Za-z]", i)  :
+		if i.islower() == True:
+			if (k%26)+al_list.index(i)<=25:
+				new_list.append((al_list[(k%26)+al_list.index(i)]))
+			elif (k%26)+al_list.index(i) >25:
+				new_list.append((al_list[(k%26)+al_list.index(i)-26]))
+		elif i.islower() == False:
+			if (k%26)+al_list.index(i.lower())<=25:
+				new_list.append(((al_list[(k%26)+al_list.index(i.lower())]).upper()))
+			elif (k%26)+al_list.index(i.lower()) >25:
+				new_list.append(((al_list[(k%26)+al_list.index(i.lower())-26]).upper()))
+	elif re.match("[^\w]", i):
+			new_list.append(i)
+	elif re.match('[0-9]',i):
+		    new_list.append(i)
+	elif re.match('_',i):
+		    new_list.append('_')
+
+print(''.join(new_list))
+
+
+#6.Mars Exploration
+import sys
+
+S = input().strip()
+sos=[]
+print (int(len(S)/3))
+
+for i in range(int(len(S)/3)):
+	sos.append('SOS')
+
+sos=(''.join(sos))
+sos_2 = []
+
+for i in range(len(sos)):
+	if sos[i] != S[i]:
+		sos_2.append(sos[i])
+
+print(len(sos_2))
+
+
+
+
+
+
+
+
+
+
+
+
