@@ -1,0 +1,42 @@
+#1.Flipping the Matrix
+q = int(input())
+
+for ii in range(q):
+    n = int(input())
+    m = []
+    m_max = 0
+    for jj in range(2*n):
+        m.append(list(map(int,input().split(' '))))
+    for jj in range(n):
+        for kk in range(n):
+            m_max += max(m[jj][kk], m[jj][2*n - kk-1], m[2*n-jj-1][kk], m[2*n - jj-1][2*n-kk-1])
+    print(m_max)
+    
+#2.New Year Chaos
+T = int(input().strip())
+for a0 in range(T):
+    n = int(input().strip())
+    q = [int(q_temp) for q_temp in input().strip().split(' ')]
+    a = 0
+    # your code goes here
+    bribe = 0
+    temp = []
+    for i in range(n):
+        diff = q[i]-i-1
+        if diff > 2 and q[i] > i+1:
+            a = 1
+            break
+        else :
+            temp.append(q[i])
+            for j in temp:
+                if j > q[i]:
+                    bribe += 1
+    if a==1:
+        print("Too chaotic")
+    else:
+        print(bribe)
+        
+ #3.Bonetrousle 
+ 
+        
+        
