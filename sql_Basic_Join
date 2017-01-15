@@ -1,0 +1,49 @@
+
+#1.Asian Population
+select sum(a.population) from city a inner join country b on a.countrycode = b.code 
+where b.continent = 'Asia'
+
+#2.African Cities
+select a.name from city a inner join country b
+on a.countrycode = b.code
+where b.continent = 'Africa'
+
+#3.Average Population of Each Continent
+select b.continent, floor(avg(a.population)) from city a inner join country b
+on a.countrycode = b.code
+group by b.continent
+
+#4.The Report
+SELECT (CASE WHEN G.GRADE<8 THEN 'NULL' ELSE S.NAME END), G.GRADE,S.MARKS
+FROM STUDENTS S JOIN GRADES G ON S.MARKS BETWEEN G.MIN_MARK AND G.MAX_MARK
+ORDER BY G.GRADE DESC, S.NAME ASC, S.MARKS ASC;
+
+#5.Top Competitors
+select sub.hacker_id, hak.name 
+from submissions sub, challenges cha,  hackers hak, difficulty dif
+where sub.challenge_id = cha.challenge_id 
+and sub.hacker_id = hak.hacker_id
+and cha.difficulty_level = dif.difficulty_level
+
+and dif.score = sub.score
+
+group by sub.hacker_id, hak.name 
+having count(sub.score) > 1
+
+order by count(sub.score) desc, sub.hacker_id;
+
+#6.Ollivander's Inventory
+select wands.id, min_prices.age, wands.coins_needed, wands.power
+from wands
+inner join (select wands.code, wands.power, min(wands_property.age) as age, min(wands.coins_needed) as min_price
+            from wands
+            inner join wands_property
+            on wands.code = wands_property.code
+            where wands_property.is_evil = 0
+            group by wands.code, wands.power) min_prices
+on wands.code = min_prices.code
+   and wands.power = min_prices.power
+   and wands.coins_needed = min_prices.min_price
+order by wands.power desc, min_prices.age desc
+
+#7.Challenges
