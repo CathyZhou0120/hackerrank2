@@ -105,7 +105,20 @@ for i in range(len(sos)):
 print(len(sos_2))
 
 #7.Funny String
-
+n = int(input())
+for _ in range(n):
+    str_ = input()
+    len_ = len(str_)
+    for i in range(1, len_):
+        s_diff = ord(str_[i]) - ord(str_[i - 1])
+        r_diff = ord(str_[len_ - i]) - ord(str_[len_ - i - 1])
+        if abs(s_diff) != abs(r_diff):
+            print ("Not Funny")
+            break
+    else:
+        print ("Funny")
+    
+ #8. 
 
 
 
