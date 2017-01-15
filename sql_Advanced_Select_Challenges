@@ -22,3 +22,5 @@ group by oc.Occupation
 order by count(*);
 
 #3.Occupations
+#4.Binary Search Tree
+
