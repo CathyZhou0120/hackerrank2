@@ -1,0 +1,10 @@
+1.If we have a tree of n nodes, how many edges will it have?
+A: n-1
+
+2.Which of the following data structures can handle updates and queries in log(n) time on an array?
+A:Segment Tree
+
+3.Of the following data structures, which has a Last in First Out ordering? In other words, the one that
+came in last will be the first to be popped.
+A:Stack
+
