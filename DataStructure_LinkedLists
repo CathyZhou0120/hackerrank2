@@ -1,0 +1,17 @@
+#1. Print the Elements of the Linked List
+
+def print_list(head):
+    if head is not None:
+        print(head.data)
+        print_list(head.next)
+
+#2.Insert a Node at the Tail of a Linked List 
+def Insert(head, data):
+    if head == None:
+        return Node(data, None)
+    else:
+        if head.next == None:
+            head.next = Node(data,None)
+        else:
+            Insert(head.next,data)
+        return head
