@@ -236,15 +236,19 @@ print (functools.reduce(lambda x, y: x*y, n_l))
 
 #18.Sherlock and Squares
 import math
-t = int(input().strip())
-for a0 in range(t):
-    a,b = input().strip().split(' ')
-    a,b = [int(a),int(b)]
-    square_root=[]
-    for i in range(a,b+1):
-        if math.sqrt(i)-int(math.sqrt(i)) ==0:
-            square_root.append(i)
-    print(len(square_root))
+
+loop = int(input())
+for i in range(loop):
+    m,n = [int(j) for j in input().split(" ")]
+    sq_m = math.sqrt(m)
+    sq_n = int(str(math.sqrt(n)).split(".")[0])
+    
+    if int(str(math.sqrt(m)).split(".")[1]) == 0:
+        a = int(str(math.sqrt(m)).split(".")[0])
+    else:
+        a = int(str(math.sqrt(m)).split(".")[0]) + 1
+    ans = sq_n - a + 1
+    print(ans)
 
 #19.Library Fine
 import sys
