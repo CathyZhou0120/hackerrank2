@@ -37,11 +37,19 @@ for i in range(Q+1):
         print(last_ans)
         
 #4.Left Rotation
-n, d = map(int, input().strip().split())
-arr = list(map(int, input().strip().split()))
+from collections import deque
 
-d %= n
-print(*(arr[d:] + arr[:d]))
+n,k = map(int,input().strip().split())
+
+arr = [int(A_temp) for A_temp in input().strip().split(' ')]
+
+
+items = deque(arr)
+
+items.rotate(-k)
+
+for i in items:
+	print(i,end=' ')
 
 #5.Sparse Arrays
 import collections
