@@ -478,6 +478,28 @@ for row in grid:
 
 #35.Chocolate Feast
 #36.Service Lean
+
+import sys
+
+
+n,t = input().strip().split(' ')
+n,t = [int(n),int(t)]
+width = [int(width_temp) for width_temp in input().strip().split(' ')]
+for a0 in range(t):
+    i,j = input().strip().split(' ')
+    i,j = [int(i),int(j)]
+    width2 = []
+    for x in range(i,j+1):
+        width2.append(width[x])
+    if min(width2) == 1:
+        print(1)
+    elif min(width2) == 2:
+        print (2)
+    elif min(width2) == 3:
+        print(3)
+    else:
+        print(3)
+	
 #37.Lisa's workbook
 #38.The Grid Search
 #39.FlatLand Space Station
