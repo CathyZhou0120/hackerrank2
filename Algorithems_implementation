@@ -282,7 +282,20 @@ while(len(arr)):
     print(len(arr))
     arr = [x - min(arr) for x in arr if x - min(arr)>0]
 
-#21.Non-Divisible Subset (unresolved)
+#21.Non-Divisible Subset 
+n, k = map(int,input().strip().split(' '))
+ar= list(map(int,input().strip().split(' ')))
+result = [0]*k
+for n in ar:
+    result[n%k] += 1
+ans = min(result[0],1)
+for i in range(1,k//2+1):
+    if i != k-i:
+        ans += max(result[i], result[k-i])
+    else:
+        if result[i]:
+            ans+=1
+print(ans)
 
 #22.Repeated String
 
@@ -401,8 +414,55 @@ else:
     print()
     
 #30.Beautiful Triplets
+
+final2=[]
+
+for i in range(n):
+
+    if a[i]+d in a and a[i]+2*d in a:
+        final2.append((a[i], a[i]+d, a[i]+2*d))
+        i = i+1
+print(len(final2))     
+
 #31.Manasa and Stones
+for _ in range(int(input())):
+    n,a,b = int(input()),int(input()),int(input())
+
+    
+    print (' '.join(map(str,sorted({x*a+(n-1-x)*b for x in range(n)}))))
+
 #32.Minumum Distance
+import sys
+from collections import defaultdict
+
+n = int(input().strip())
+arr = [int(A_temp) for A_temp in input().strip().split(' ')]
+
+list(filter ((lambda y:y==2),list((map(lambda x: arr.count(x),arr)))))
+s=list(filter(lambda y:arr.count(y)==2,arr))
+
+
+D = defaultdict(list)
+for i,item in enumerate(arr):
+    D[item].append(i)
+D = {k:v for k,v in D.items() if len(v)>1}
+final=[]
+
+if len(D)==0:
+	print(-1)
+else:
+    for key, value in D.items():
+        temp = [value]
+        final.append(temp)
+    final2 = []
+    for i in final:
+        final2.append(tuple((i[0])))
+    final3 = []
+    for i in final2:
+        final3.append((i[1]-i[0]))
+    print(min(final3))
+    
+ 
 #33.The Time in Words
 #34.Cavity Map
 #35.Chocolate Feast
